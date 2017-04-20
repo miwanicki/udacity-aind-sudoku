@@ -3,17 +3,25 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: *Student should provide answer here*
+A: Easiest solution is to look for pair of cells in any unit that have only 2 possible values.
+In such case, iterate through all the remaining cells in that unit, and remove both values
+from their possible pool.  
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+A: Just like in elimination, only choice and naked twins. Diagonal sudoku expands the
+list of units, but adding two lists of boxes on the diagonals. Boxes on the diagonals
+have the list of their peers expanded by 1 or 2 (in case of E5 - centre piece) lists.
+
+- Elimination looks for single values on the diagonals, and removes them from other boxes on the diagonals.
+- Only Choice looks for value that can only be added to a single box on the diagonal.
+- For naked twins, see above.  
 
 ### Install
 
 This project requires **Python 3**.
 
-We recommend students install [Anaconda](https://www.continuum.io/downloads), a pre-packaged Python distribution that contains all of the necessary libraries and software for this project. 
+We recommend students install [Anaconda](https://www.continuum.io/downloads), a pre-packaged Python distribution that contains all of the necessary libraries and software for this project.
 Please try using the environment we provided in the Anaconda lesson of the Nanodegree.
 
 ##### Optional: Pygame
@@ -41,4 +49,3 @@ The setup is simple.  If you have not installed the client tool already, then yo
 To submit your code to the project assistant, run `udacity submit` from within the top-level directory of this project.  You will be prompted for a username and password.  If you login using google or facebook, visit [this link](https://project-assistant.udacity.com/auth_tokens/jwt_login for alternate login instructions.
 
 This process will create a zipfile in your top-level directory named sudoku-<id>.zip.  This is the file that you should submit to the Udacity reviews system.
-
